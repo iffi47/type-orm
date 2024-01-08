@@ -1,6 +1,7 @@
 import "reflect-metadata";
 import { DataSource } from "typeorm";
 import { User } from "./entity/User";
+import { Tweets } from "./entity/Tweet";
 
 export const AppDataSource = new DataSource({
   type: "mysql",
@@ -11,6 +12,6 @@ export const AppDataSource = new DataSource({
   database: "social_network",
   synchronize: true,
   logging: true,
-  entities: ["src/*.entity{.ts,.js}"],
+  entities: [User, Tweets],
   migrations: ["src/migration/**/*.js"],
 });
